@@ -10,6 +10,8 @@ class Admin
 
   has_secure_password
 
+  validates :password, confirmation: true, presence: true, length: 6..36
+
   def self.find(email)
     SiteConfig.admin_email == eamil ? Admin.new(email: SiteConfig.admin_email, password_digest: SiteConfig.password_digest) : nil
   end
