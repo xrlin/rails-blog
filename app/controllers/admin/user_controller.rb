@@ -1,4 +1,4 @@
-class Admin::UserController < ApplicationController
+class Admin::UserController < Admin::ApplicationController
   skip_before_action :has_admin?, only: [:new, :create]
 
   def new

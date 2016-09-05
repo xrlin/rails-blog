@@ -28,5 +28,4 @@ class AdminTest < ActiveSupport::TestCase
     # clear SiteConfig
     SiteConfig.admin_email = nil
   end
-
 end
