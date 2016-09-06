@@ -1,5 +1,6 @@
 <article class="pure-u-2-3">
   <h2 class=title><%= post.title %></h2>
   <div class="body"><%= post.body %></div>
-  <footer>Ceateed at 2016</footer>
+  <hr/>
+  <footer><%= local_time(post.created_at) %></footer>
 </article>

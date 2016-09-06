@@ -1,7 +1,7 @@
 @import "utils";
 
 .header {
-  padding-top: 25px;
+  padding-top: 35px;
   text-align: center;
 }
 
@@ -17,6 +17,11 @@ nav {
 
     &::before {
       @include blur-glass;
+    }
+    &.active, &:hover, &:focus{
+      color: #129fea;
+      // color: #ffffff;
+      text-shadow: 0.01em 0.01em 2px #444;
     }
   }
 }
