@@ -16,4 +16,8 @@ class PostTest < ActiveSupport::TestCase
       Post.create(title: 'Test', body: 'Hello world')
     end
   end
+
+  test "fixture one should belongs to category test" do
+    assert posts(:one).category == categories(:test)
+  end
 end
