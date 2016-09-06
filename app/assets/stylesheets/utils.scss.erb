@@ -8,11 +8,14 @@
 }
 
 @mixin blur-glass {
-  background: url(<%= asset_path 'background.jpg' %>) no-repeat center center fixed;
+  // background: url(<%= asset_path 'background.jpg' %>) no-repeat center center fixed;
+  background: rgba(242, 242, 242, 0.73);;
   content: '';
   position: absolute;
   top: 0; right: 0; bottom: 0; left: 0;
   z-index: -1;
-  -webkit-filter: blur(20px);
-  filter: blur(20px);
+  -webkit-filter: blur(15px);
+  -ms-filter: blur(15px);
+  -o-filter: blur(15px);
+  filter: blur(15px);
 }
