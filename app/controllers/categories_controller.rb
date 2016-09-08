@@ -7,7 +7,7 @@ class CategoriesController < ApplicationController
   end
 
   def category
-    Category.find(params[:id])
+    Category.find_by_slug_or_id params[:id]
   end
 
 end

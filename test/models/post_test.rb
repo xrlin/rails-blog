@@ -20,4 +20,16 @@ class PostTest < ActiveSupport::TestCase
   test "fixture one should belongs to category test" do
     assert posts(:one).category == categories(:test)
   end
+
+  test "post should act as taggable" do
+    tag_list = [:test1, :test2]
+    post = Post.new(title: 'sdfsdf', body: '', tag_list: tag_list)
+    assert_equal post.tag_list.count, 2
+  end
+
+  test "create with slug" do
+    p = Post.create(title: '测试 Slug', body: '')
+    assert_equal p.slug, 'ce-shi-slug'
+  end
+
 end

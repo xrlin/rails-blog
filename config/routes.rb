@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
   resources :posts, only: [:index, :show]
   resources :categories, only: [:show]
+  resources :tags, only: [:show], param: :slug
 
   namespace :admin do
     root 'application#index', as: :root

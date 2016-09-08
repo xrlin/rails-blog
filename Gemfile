@@ -31,6 +31,11 @@ gem "rails-settings-cached"
 # JavaScript local time
 gem "local_time"
 
+# Use this gem to set tags easily
+gem 'acts-as-taggable-on', '~> 4.0'
+# Use this to translate to pinyin
+gem 'chinese_pinyin'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

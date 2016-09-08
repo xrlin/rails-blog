@@ -1,6 +1,17 @@
 <article class="pure-u-2-3">
-  <h2 class=title><%= post.title %></h2>
+  <h2 class=title><%=link_to post.title, post_path(post), title: '阅读全文' %></h2>
   <div class="body"><%= post.body %></div>
   <hr/>
-  <footer><%= local_time(post.created_at) %></footer>
+  <footer>
+    <%= local_time(post.created_at) %>/
+    <% if post.category %>
+      <%= link_to post.category.name, category_path(post.category), title: "目录：#{post.category.name}" %>
+    <% end %>
+    <% if !post.tag_list.blank? %>
+      /
+      <% post.tags.each do |t| %>
+        <%= link_to t.name, tag_path(t), title: "标签：#{t.name}" %>
+      <% end %>
+    <% end %>
+  </footer>
 </article>

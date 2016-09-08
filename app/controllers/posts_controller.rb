@@ -5,7 +5,7 @@ class PostsController < ApplicationController
   end
 
   def show
-
+    @post = Post.find_by_slug_or_id(params[:id])
   end
 
 end

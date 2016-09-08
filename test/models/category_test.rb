@@ -19,4 +19,9 @@ class CategoryTest < ActiveSupport::TestCase
   test "test fixture should have two posts" do
     assert_equal categories(:test).posts.count, 2
   end
+
+  test "create with slug" do
+    c = Category.create(name: '测试 Slug')
+    assert_equal c.slug, 'ce-shi-slug'
+  end
 end

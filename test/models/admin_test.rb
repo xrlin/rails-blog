@@ -1,11 +1,16 @@
 require 'test_helper'
 
 class AdminTest < ActiveSupport::TestCase
+
+  def setup
+    SiteConfig.admin_email = nil
+  end
+
   test "email is invalid" do
     admin = Admin.new(email: 'xx', password: 'password', password_confirmation: 'password')
     assert false == admin.valid?, 'Email validator is not work properly'
     assert false == admin.save, 'Email is not valid but can save, this must be fixed!'
-    assert SiteConfig.admin_email == nil
+    # assert SiteConfig.admin_email == nil
   end
 
   test "password is invalid" do
