@@ -17,7 +17,9 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       post 'authentication/token', to: 'authentication#token'
-      resources :categories, only: [:create]
+      resources :categories, only: [:index, :create, :update, :destroy]
+      resources :posts, only: [:index, :create, :update, :destroy]
     end
   end
+
 end

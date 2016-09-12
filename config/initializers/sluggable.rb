@@ -1,8 +1,9 @@
-module Slug
+module Sluggable
   extend ActiveSupport::Concern
 
   included do
-    before_save :set_slug
+    validates :slug, presence: true, uniqueness: true
+    before_validation :set_slug
 
     def self.find_by_slug_or_id(attr)
       find_by_slug(attr) || find(attr)
