@@ -3,8 +3,9 @@
   <div class="body"><%= post.body %></div>
   <hr/>
   <footer>
-    <%= local_time(post.created_at) %>/
+    <%= local_time(post.created_at) %>
     <% if post.category %>
+      /
       <%= link_to post.category.name, category_path(post.category), title: "目录：#{post.category.name}" %>
     <% end %>
     <% if !post.tag_list.blank? %>
