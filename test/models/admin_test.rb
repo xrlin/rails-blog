@@ -29,6 +29,18 @@ class AdminTest < ActiveSupport::TestCase
     assert SiteConfig.admin_email == admin.email
   end
 
+  test "generate jwt" do
+    admin = Admin.new(email: 'test@example.com', password: 'password', password_confirmation: 'password')
+    assert admin.token.blank? == false
+  end
+
+  test "find admin with JWT" do
+    admin = Admin.new(email: 'test@example.com', password: 'password', password_confirmation: 'password')
+    admin.save
+    admin_from_token = Admin.find_by_token(admin.token)
+    assert_equal admin_from_token.nil?, false
+  end
+
   def teardown
     # clear SiteConfig
     SiteConfig.admin_email = nil

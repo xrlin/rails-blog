@@ -13,4 +13,11 @@ Rails.application.routes.draw do
     resources :user, only: [:show, :new, :create]
     resources :posts, only: [:create, :update, :destroy]
   end
+
+  namespace :api do
+    namespace :v1 do
+      post 'authentication/token', to: 'authentication#token'
+      resources :categories, only: [:create]
+    end
+  end
 end

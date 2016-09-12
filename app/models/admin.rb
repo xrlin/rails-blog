@@ -13,7 +13,23 @@ class Admin
   validates :password, confirmation: true, presence: true, length: 6..36
 
   def self.find(email)
-    SiteConfig.admin_email == eamil ? Admin.new(email: SiteConfig.admin_email, password_digest: SiteConfig.password_digest) : nil
+    SiteConfig.admin_email == email ? Admin.new(email: SiteConfig.admin_email, password_digest: SiteConfig.password_digest) : nil
+  end
+
+  def self.find_by_token(token)
+    payload = Token.decode token
+    return nil if payload.nil?
+    # Decoded token the hash key is string not symbol
+    Admin.find(payload['admin_email'])
+  end
+
+  def self.digest(string)
+    cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST : BCrypt::Engine.cost
+    BCrypt::Password.create(string, cost: cost)
+  end
+
+  def token
+    Token.encode admin_email: self.email, exp: Time.now.to_i + 4 * 3600
   end
 
   def save

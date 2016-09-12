@@ -36,6 +36,17 @@ gem 'acts-as-taggable-on', '~> 4.0'
 # Use this to translate to pinyin
 gem 'chinese_pinyin'
 
+# Markdown
+gem 'redcarpet'
+
+# Truncate html
+gem 'truncate_html'
+
+# Json Web Token library
+gem 'jwt'
+
+gem 'bulk_insert'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
