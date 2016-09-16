@@ -1,6 +1,6 @@
 class Category < ApplicationRecord
-  include Slug
-  validates :name, presence: true, allow_blank?: false
+  include Sluggable
+  validates :name, presence: true, allow_blank?: false, uniqueness: true
 
   has_many :posts
 end

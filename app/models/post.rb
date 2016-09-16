@@ -1,6 +1,6 @@
 class Post < ApplicationRecord
   acts_as_taggable
-  include Slug
+  include Sluggable
 
   validates :title, presence: true, allow_blank?: false
 
