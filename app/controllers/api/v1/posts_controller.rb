@@ -2,7 +2,7 @@ module Api
   module V1
     class PostsController < Api::V1::ApplicationController
 
-      before_action :authenticate_admin!, except: [:index]
+      # before_action :authenticate_admin!, except: [:index]
       before_action :set_post, only: [:update, :destroy]
 
       def index

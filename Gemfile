@@ -47,10 +47,6 @@ gem 'jwt'
 
 gem 'bulk_insert'
 
-# Browserify
-gem "browserify-rails"
-
-
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

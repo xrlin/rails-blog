@@ -1,8 +1,9 @@
 class Admin::ApplicationController < ApplicationController
-  before_action :has_admin?
+  # temporary remove check
+  # before_action :has_admin?
 
   def index
-    head :ok
+    render 'admin/index', layout: false
   end
 
   def has_admin?
