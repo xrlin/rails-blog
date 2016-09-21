@@ -1,0 +1,1 @@
+export const REFRESH_POSTS = 'REFRESH_POSTS'

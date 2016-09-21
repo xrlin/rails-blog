@@ -3,12 +3,26 @@
   <head>
     <meta charset="utf-8">
     <link href="/assets/pure-min.css" media="screen" rel="stylesheet" />
+    <link href="/assets/email.css" media="screen" rel="stylesheet" />
     <title>admin</title>
   </head>
   <body>
-    <div id="app" class="pure-g">
-      <app></app>
-    </div>
-    <%= javascript_include_tag "admin/application" %>
+    <div id="app"></div>
   </body>
+  <%= javascript_include_tag "admin/application" %>
+  <script src="http://yui.yahooapis.com/3.17.2/build/yui/yui-min.js"></script>
+  <script>
+      YUI().use('node-base', 'node-event-delegate', function (Y) {
+
+          var menuButton = Y.one('.nav-menu-button'),
+              nav        = Y.one('#nav');
+
+          // Setting the active class name expands the menu vertically on small screens.
+          menuButton.on('click', function (e) {
+              nav.toggleClass('active');
+          });
+
+          // Your application code goes here...
+      });
+  </script>
 </html>
