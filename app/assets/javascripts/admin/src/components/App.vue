@@ -1,20 +1,25 @@
 <template>
-  <div id="layout" class="content pure-g">
-    <sidebar></sidebar>
-    <main class="pure-u" id="editor">
-      <router-view><router-view>
-    </main>
-  </div>
+  <sidebar></sidebar>
+  <main id="main" class="pure-u-22-24 main-container">
+    <router-view><router-view>
+  </main>
 </template>
 
 <script>
-import Sidebar from './Sidebar.vue'
-import store from '../vuex/store.js'
+  import Sidebar from './Sidebar.vue'
+  import store from '../vuex/store.js'
 
-module.exports = {
-  store,
-  components: {
-    sidebar: Sidebar
+  module.exports = {
+    store,
+    components: {
+      sidebar: Sidebar
+    }
   }
-}
 </script>
+
+<style>
+  #main {
+    /* Fill in the reset space */
+    flex: 1;
+  }
+</style>
