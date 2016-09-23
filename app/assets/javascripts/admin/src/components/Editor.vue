@@ -10,6 +10,7 @@
       });
     },
     beforeDestroy: function() {
+      // destroy
       window.editor.destroy()
     }
   }
