@@ -1,4 +1,4 @@
-import REFRESH_POSTS from '../mutation-types.js'
+import { REFRESH_POSTS } from '../mutation-types.js'
 
 const state = {
   all: []

@@ -1,5 +1,5 @@
 // This is a change in vue2.0
-import Vue from 'vue/dist/vue.js'
+import Vue from 'vue'
 import VueRouter from 'vue-router'
 import VueResource from 'vue-resource'
 import App from './components/App.vue'

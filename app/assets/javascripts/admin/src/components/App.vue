@@ -1,7 +1,7 @@
 <template>
   <div id="layout" class="content pure-g">
     <sidebar></sidebar>
-    <main class="pure-u-4-5">
+    <main class="pure-u" id="editor">
       <router-view><router-view>
     </main>
   </div>
@@ -12,9 +12,9 @@ import Sidebar from './Sidebar.vue'
 import store from '../vuex/store.js'
 
 module.exports = {
+  store,
   components: {
     sidebar: Sidebar
-  },
-  store
+  }
 }
 </script>

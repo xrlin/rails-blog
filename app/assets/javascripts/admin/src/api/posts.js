@@ -1,12 +1,10 @@
+import Vue from 'vue'
+
 export default {
   getPosts () {
-    Vue.http.get('/api/v1/posts').then(
-      (response) => {
-        response.body;
-      },
-      (response) => {
-        console.log('Error');
-      }
+    return Vue.http.get('/api/v1/posts').then(
+      (response) => Promise.resolve(response.data),
+      (error) => Promise.reject(error)
     )
   }
 }

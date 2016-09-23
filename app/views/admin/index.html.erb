@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <link href="/assets/pure-min.css" media="screen" rel="stylesheet" />
     <link href="/assets/email.css" media="screen" rel="stylesheet" />
+    <%= stylesheet_link_tag "admin/application" %>
     <title>admin</title>
   </head>
   <body>
@@ -11,7 +12,7 @@
   </body>
   <%= javascript_include_tag "admin/application" %>
   <script src="http://yui.yahooapis.com/3.17.2/build/yui/yui-min.js"></script>
-  <script>
+  <!-- <script>
       YUI().use('node-base', 'node-event-delegate', function (Y) {
 
           var menuButton = Y.one('.nav-menu-button'),
@@ -24,5 +25,5 @@
 
           // Your application code goes here...
       });
-  </script>
+  </script> -->
 </html>

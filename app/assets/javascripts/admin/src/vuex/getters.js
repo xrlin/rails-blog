@@ -2,4 +2,8 @@ export const posts = (state) => {
   return state.posts.all
 }
 
-export const test = 3
+export const currentPost = (state, id) => {
+  return state.posts.all.filter(post => {
+        return post.id === id
+      })
+}
