@@ -1,23 +1,20 @@
 <template>
-  <div class="editor-wrapper">
-    <textarea id="editorx" placeholder="Balabala" autofocus></textarea>
-  </div>
+  <textarea id="editor" placeholder="Balabala" autofocus></textarea>
 </template>
 
 <script>
-export default {
-  attached: function(){
-    var editor = new Simditor({
-      textarea: $('#editorx')
-    });
+  export default {
+    attached: function(){
+      window.editor = new Simditor({
+        textarea: $('#editor')
+      });
+    },
+    beforeDestroy: function() {
+      window.editor.destroy()
+    }
   }
-}
 </script>
 
-<style>
-#editor {
-  position: fixed;
-  margin-left: -350px;
-  height: 100%;
-}
+<style scoped>
+
 </style>

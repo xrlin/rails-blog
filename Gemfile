@@ -42,6 +42,9 @@ gem 'redcarpet'
 # Truncate html
 gem 'truncate_html'
 
+# Use font awesome icons
+gem "font-awesome-rails"
+
 # Json Web Token library
 gem 'jwt'
 
