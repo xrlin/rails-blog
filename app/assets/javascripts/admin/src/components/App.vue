@@ -1,6 +1,6 @@
 <template>
   <sidebar></sidebar>
-  <main id="main" class="pure-u-22-24 main-container">
+  <main id="main" class="pure-g main-container">
     <router-view><router-view>
   </main>
 </template>
@@ -17,7 +17,7 @@
   }
 </script>
 
-<style>
+<style scoped>
   #main {
     /* Fill in the reset space */
     flex: 1;

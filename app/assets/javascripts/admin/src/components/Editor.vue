@@ -1,5 +1,8 @@
 <template>
-  <textarea id="editor" placeholder="Balabala" autofocus></textarea>
+  <section class="pure-u-22-24 editor">
+    <div class="title">Title</div>
+    <textarea id="editor" placeholder="Balabala" autofocus></textarea>
+  </section>
 </template>
 
 <script>
@@ -17,5 +20,14 @@
 </script>
 
 <style scoped>
+.editor {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
 
+.title {
+  height: 3em;
+}
 </style>

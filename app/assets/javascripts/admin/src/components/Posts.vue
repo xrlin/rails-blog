@@ -1,5 +1,5 @@
 <template>
-  <div id="list" class="pure-u-1">
+  <div id="list" class="pure-menu pure-menu-scrollable pure-u-1-4 post-list">
     <template v-for="post in posts">
       <a v-link="{ path: '/blog/' + post.id }"  class="email-item email-item-unread link-panel pure-g">
           <div class="pure-u-3-4">
@@ -38,6 +38,14 @@ module.exports = {
 </script>
 
 <style scoped>
+.post-list {
+  height: 100%;
+  padding: 0 1em 0 1em;
+  border-right: 1px solid #c9d8db;
+  max-width: 350px;
+  min-width: 180px;
+}
+
 .link-panel {
   color: inherit;
 }
