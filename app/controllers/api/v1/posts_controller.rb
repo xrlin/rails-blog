@@ -3,11 +3,15 @@ module Api
     class PostsController < Api::V1::ApplicationController
 
       # before_action :authenticate_admin!, except: [:index]
-      before_action :set_post, only: [:update, :destroy]
+      before_action :set_post, only: [:update, :destroy, :show]
 
       def index
         # TODO Paginate posts
         render json: Post.all, status: :ok
+      end
+
+      def show
+        render json: @post, status: :ok
       end
 
       def create

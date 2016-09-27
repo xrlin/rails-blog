@@ -7,8 +7,13 @@ class Api::V1::PostsControllerTest < ActionDispatch::IntegrationTest
     @admin.save
   end
 
-  test "shoult get categories" do
+  test "should get posts" do
     get api_v1_posts_url
+    assert_response :ok
+  end
+
+  test "should get post by id" do
+    get api_v1_post_url(1)
     assert_response :ok
   end
 

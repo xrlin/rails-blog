@@ -14,6 +14,9 @@ export default function(router) {
         }
     },
     '/blog/editor': {
+      component: Editor,
+    },
+    '/blog/editor/:id': {
       component: Editor
     }
   });

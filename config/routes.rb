@@ -20,7 +20,7 @@ Rails.application.routes.draw do
       get 'siteConfig', to: 'site_config#index'
       put 'siteConfig', to: 'site_config#update'
       resources :categories, only: [:index, :create, :update, :destroy]
-      resources :posts, only: [:index, :create, :update, :destroy]
+      resources :posts, only: [:index, :show, :create, :update, :destroy]
     end
   end
 
