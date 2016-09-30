@@ -21,5 +21,7 @@
   #main {
     /* Fill in the reset space */
     flex: 1;
+    /* Limit the child elements inside the main box. Use this to fix problem when using flex */
+    min-widht: 0;
   }
 </style>

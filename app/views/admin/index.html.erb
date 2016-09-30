@@ -29,15 +29,18 @@
       flex: 1;
       border-left: 0;
       border-right: 0;
+      /* Limit the child elements inside the main box. Use this to fix problem when using flex */
+      min-width: 0;
     }
 
     .simditor-wrapper {
       flex: 1;
+      min-height: 0;
     }
 
     .simditor-body {
-      height: 100%;
-      overflow: auto;
+      height: 800px;
+      overflow-y: auto;
     }
   </style>
 </html>

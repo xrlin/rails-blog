@@ -1,6 +1,6 @@
 <template>
   <section class="pure-u-22-24 editor">
-    <div class="title">Title</div>
+    <div id="title" class="title">Title</div>
     <textarea id="editor" placeholder="Balabala" autofocus></textarea>
   </section>
 </template>
