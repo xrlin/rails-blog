@@ -27,7 +27,6 @@ module Api
         def get_setting(var_name)
           SiteConfig.find_by(var: var_name) || SiteConfig.new(var: params[:id])
         end
-
     end
   end
 end

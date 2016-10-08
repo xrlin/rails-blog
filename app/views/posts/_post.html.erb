@@ -1,6 +1,6 @@
 <article class="pure-u-2-3">
   <h2 class=title><%=link_to post.title, post_path(post), title: '阅读全文' %></h2>
-  <div class="body"><%= post.body %></div>
+  <div class="body"><%= post.body.html_safe %></div>
   <hr/>
   <footer>
     <%= local_time(post.created_at) %>

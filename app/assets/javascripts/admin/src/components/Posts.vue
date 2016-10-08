@@ -1,7 +1,7 @@
 <template>
   <div id="list" class="pure-menu pure-menu-scrollable pure-u-1-4 post-list">
     <template v-for="post in posts">
-      <a v-link="{ path: '/blog/' + post.id }"  class="email-item email-item-unread link-panel pure-g">
+      <a v-link="{ path: '/blog/' + post.id }"  class="pure-g">
           <div class="pure-u-3-4">
             <h4 class="email-subject">{{ post.title }}</h4>
             <p class="email-desc">
@@ -15,7 +15,6 @@
 </template>
 
 <script>
-import refreshPosts from '../vuex/actions.js'
 import { posts } from '../vuex/getters.js'
 
 module.exports = {

@@ -6,9 +6,7 @@
             </div>
 
             <div class="content-controls pure-u-1-2">
-                <button class="control-button pure-button">Reply</button>
-                <button class="control-button pure-button">Forward</button>
-                <button class="control-button pure-button">Move to</button>
+                <a v-link="{ path: `/blog/editor/${post.id}` }" class="control-button pure-button">Edit</a>
             </div>
         </div>
 
