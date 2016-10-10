@@ -22,7 +22,7 @@ class Api::V1::CategoriesControllerTest < ActionDispatch::IntegrationTest
   test "should create" do
     assert_difference 'Category.count', 1 do
       post api_v1_categories_url, params: { category: { name: 'test1' } }, headers: { AUTHORIZATION: @admin.token }
-      assert_response :ok
+      assert_response :created
     end
   end
 
