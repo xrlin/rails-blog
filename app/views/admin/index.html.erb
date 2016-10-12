@@ -19,8 +19,8 @@
     </style>
     <title>admin</title>
   </head>
-  <body class="pure-g">
-    <div id="app"></div>
+  <body id="app" class="pure-g">
+    <router-view></router-view>
   </body>
   <%= javascript_include_tag "admin/application" %>
   <style>
@@ -39,7 +39,7 @@
     }
 
     .simditor-body {
-      height: 800px;
+      /*height: 800px;*/
       overflow-y: auto;
     }
   </style>

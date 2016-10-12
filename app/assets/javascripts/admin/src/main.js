@@ -12,4 +12,4 @@ var router = new VueRouter();
 
 configRoutes(router)
 
-router.start(App, '#app');
+router.start({}, '#app');
