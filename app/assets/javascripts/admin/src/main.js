@@ -12,4 +12,19 @@ var router = new VueRouter();
 
 configRoutes(router)
 
+import { validToken } from './utils'
+
+router.beforeEach(function (transition) {
+  if (transition.to.path !== '/login') {
+    if(validToken()){
+      transition.next()
+    }else{
+      console.log('hh')
+      router.go('/login')
+    }
+  } else {
+    transition.next()
+  }
+})
+
 router.start({}, '#app');

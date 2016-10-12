@@ -6,6 +6,11 @@ class Admin::ApplicationController < ApplicationController
     render 'admin/index', layout: false
   end
 
+  # TODO
+  def login
+
+  end
+
   def has_admin?
     # check if a admin user has set for this application
     redirect_to new_admin_user_path unless SiteConfig.admin_email

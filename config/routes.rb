@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       post 'authentication/token', to: 'authentication#token'
+      get 'authentication/token/check', to: 'authentication#check_token'
       get 'siteConfig', to: 'site_config#index'
       put 'siteConfig', to: 'site_config#update'
       resources :categories, only: [:index, :create, :update, :destroy]

@@ -29,6 +29,9 @@ module Api
       def authenticate_admin!
         raise AccessDenied unless current_admin
       end
+
+      alias_method :check_token, :authenticate_admin!
+
     end
   end
 end
