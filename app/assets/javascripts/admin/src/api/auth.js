@@ -4,7 +4,7 @@ export default {
   getToken(user) {
     return Vue.http.post('/api/v1/authentication/token', user).then(
       (response) => Promise.resolve(response.data),
-      (error) => Promise.reject(error)
+      (error) => Promise.reject(error.data)
     )
   },
   checkToken() {

@@ -6,7 +6,7 @@ module Api
       class PageNotFound < StandardError; end
 
       rescue_from(AccessDenied) do |err|
-        render json: { error: 'AccessDenied', message: err }, status: :unauthorized
+        render json: { error: 'AccessDenied', message: err.message }, status: :unauthorized
       end
 
       rescue_from(ActiveRecord::RecordNotFound) do
@@ -27,7 +27,7 @@ module Api
       end
 
       def authenticate_admin!
-        raise AccessDenied unless current_admin
+        raise AccessDenied.new('Account validation failed!') unless current_admin
       end
 
       alias_method :check_token, :authenticate_admin!
