@@ -1,5 +1,5 @@
 <template>
-<div class="pure-u-1-4 login-wrapper">
+<div class="pure-u-lg-1-4 pure-u-md-1-2 pure-u-sm-1 login-wrapper">
   <form @submit.pervent="login()" class="pure-form pure-form-stacked">
     <fieldset>
       <legend>登录</legend>
@@ -11,8 +11,8 @@
       <button type="submit" class="pure-input-1 pure-button pure-button-primary">Login</button>
     </fieldset>
   </form>
-  <p class="error">{{ error_msg }}<p>
-<div>
+  <p class="pure-u-1 error">{{ error_msg }}</p>
+</div>
 </template>
 
 <script>
@@ -60,10 +60,12 @@ export default {
   transform: translate(-50%, -70%);
 }
 .login-wrapper form {
-  margin: 2em 3em 2em 3em;
+  margin: 2em 3em 0em 3em;
 }
 legend {
+  letter-spacing: 1em;
   text-align: center;
+  text-indent: 1em; /* For center text after setting letter-spacing */
   font-size: 1.5em;
   color: rgba(0, 120, 231, 0.6);
 }

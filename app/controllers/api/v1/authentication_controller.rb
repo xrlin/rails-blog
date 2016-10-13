@@ -4,7 +4,7 @@ module Api
 
       def token
         admin = Admin.find(params[:email])
-        raise AccessDenied if admin.nil? || !admin.authenticate(params[:password])
+        raise AccessDenied.new('Account validation failed!') if admin.nil? || !admin.authenticate(params[:password])
         render json: { token: admin.token }, status: :accepted
       end
 

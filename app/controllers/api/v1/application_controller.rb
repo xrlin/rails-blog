@@ -27,7 +27,7 @@ module Api
       end
 
       def authenticate_admin!
-        raise AccessDenied.new('Account validation failed!') unless current_admin
+        raise AccessDenied unless current_admin
       end
 
       alias_method :check_token, :authenticate_admin!
