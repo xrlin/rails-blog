@@ -12,8 +12,6 @@ class Token
     rescue
       nil
     end
-  rescue
-    nil
   end
 
 end

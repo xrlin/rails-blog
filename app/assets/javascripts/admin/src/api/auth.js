@@ -7,11 +7,21 @@ export default {
       (error) => Promise.reject(error)
     )
   },
-  checkToken(token) {
+  checkToken() {
     let result = false
-    Vue.http.get('/api/v1/authentication/token/check', token).then(
-      (response) => {resut = true},
-      (error) => {result = false}
+    /* 使用同步请求进行token有效性验证 */
+    $.ajax({
+      headers: { 'AUTHORIZATION': localStorage.getItem('token') },
+      url: '/api/v1/authentication/token/check',
+      async: false
+    }).done(
+      function(){
+        result = true
+      }
+    ).fail(
+      function() {
+        result = false
+      }
     )
     return result
   }
