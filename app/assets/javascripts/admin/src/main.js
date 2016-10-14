@@ -19,7 +19,6 @@ router.beforeEach(function (transition) {
     if(validToken()){
       transition.next()
     }else{
-      console.log('hh')
       router.go('/login')
     }
   } else {

@@ -21,7 +21,6 @@ module Api
         render json: { error: 'ParameterInvalid', message: err }, status: :bad_request
       end
 
-
       def current_admin
         @current_admin ||= Admin.find_by_token(request.headers[:AUTHORIZATION])
       end

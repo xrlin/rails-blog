@@ -23,24 +23,4 @@
     <router-view></router-view>
   </body>
   <%= javascript_include_tag "admin/application" %>
-  <style>
-    /* make simditor spread the height to fill in the screen */
-    .simditor {
-      flex: 1;
-      border-left: 0;
-      border-right: 0;
-      /* Limit the child elements inside the main box. Use this to fix problem when using flex */
-      min-width: 0;
-    }
-
-    .simditor-wrapper {
-      flex: 1;
-      min-height: 0;
-    }
-
-    .simditor-body {
-      /*height: 800px;*/
-      overflow-y: auto;
-    }
-  </style>
 </html>
